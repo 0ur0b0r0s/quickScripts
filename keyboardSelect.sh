@@ -3,8 +3,8 @@
 CHOICE=$(echo -e "BR\nUS" | dmenu)
 
 if [[ $CHOICE =~ "BR" ]];then
-    setxkbmap br && xmodmap ~/.Xmodmap
+    setxkbmap br && setxkbmap -option "ctrl:nocaps"
 
 elif [[ $CHOICE =~ "US" ]];then
-    setxkbmap us && xmodmap ~/.Xmodmap
+    setxkbmap us && setxkbmap -option "ctrl:nocaps"
 fi
