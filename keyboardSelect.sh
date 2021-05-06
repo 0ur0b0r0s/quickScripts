@@ -1,10 +1,10 @@
 #!/bin/bash
 
-CHOICE=$(echo -e "BR\nUS" | dmenu)
+CHOICE=$(printf "BR\nUS" | dmenu)
 
-if [[ $CHOICE =~ "BR" ]];then
+if [ $CHOICE = "BR" ];then
     setxkbmap br && setxkbmap -option "ctrl:nocaps"
 
-elif [[ $CHOICE =~ "US" ]];then
+elif [ $CHOICE = "US" ];then
     setxkbmap us && setxkbmap -option "ctrl:nocaps"
 fi
