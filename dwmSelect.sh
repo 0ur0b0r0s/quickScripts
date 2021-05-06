@@ -1,11 +1,11 @@
-#!/bin/bash
+#!/usr/bin/sh
 
-CHOICE=$(echo -e "Logout\nShutdown\nReboot" | dmenu)
+CHOICE=$(printf "Logout\nShutdown\nReboot" | dmenu)
 
-if [[ $CHOICE =~ "Logout" ]];then
+if [ $CHOICE = "Logout" ];then
     killall dwm
-elif [[ $CHOICE =~ "Shutdown" ]];then
+elif [ $CHOICE = "Shutdown" ];then
     shutdown -h now
-elif [[ $CHOICE =~ "Reboot" ]];then
+elif [ $CHOICE = "Reboot" ];then
     reboot
 fi
